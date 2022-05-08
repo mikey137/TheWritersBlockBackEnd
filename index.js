@@ -12,6 +12,7 @@ app.use(express.json())
 app.use(cors({
     origin: originUrl,
     credentials: true,
+    methods: ['GET', 'POST', 'DELETE', 'PUT']
 }));
 app.options('*', cors())
 
@@ -29,5 +30,5 @@ app.use("/users", require("./routes/users"))
 app.use("/followers", require("./routes/followers"))
 
 app.listen(PORT, () => {
-    console.log("server is running on port 5000")
+    console.log(`server is running on port ${PORT}`)
 })
