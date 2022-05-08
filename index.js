@@ -9,8 +9,11 @@ let originUrl = corsOrigin.url.API_URL
 //middleware
 app.use(express.json())
 app.use(cors({
-    origin: `${originUrl}`
+    origin: {originUrl},
+    credentials: true,
 }));
+
+app.options('*', cors())
 
 //Routes
 
