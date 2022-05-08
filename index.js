@@ -12,6 +12,7 @@ app.use(cors({
     origin: `${originUrl}`,
     credentials: true,
     methods: ['GET', 'POST', 'DELETE', 'PUT'],
+    allowedHeaders: ['Origin', 'Content-Type'],
     preflightContinue
 }));
 app.options('*', cors())
