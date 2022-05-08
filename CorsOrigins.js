@@ -1,6 +1,6 @@
 const prod = {
     url: {
-     API_URL: 'https://master--radiant-axolotl-de1247.netlify.app/'
+     API_URL: 'https://master--radiant-axolotl-de1247.netlify.app'
      }
 };
 const dev = {
