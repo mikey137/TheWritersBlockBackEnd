@@ -3,7 +3,7 @@ const app = express()
 const cors = require('cors')
 const PORT = process.env.PORT || 5000
 const { corsOrigin } = require('./CorsOrigins')
-let { originUrl } = corsOrigin.url.API_URL
+let  originUrl  = corsOrigin.url.API_URL
 
 console.log(originUrl)
 //middleware
