@@ -10,7 +10,7 @@ console.log(originUrl)
 app.use(express.json())
 app.use(express.urlencoded({ limit: '50mb', extended: true }))
 app.use(cors({
-    origin: originUrl,
+    origin: '*',
     credentials: true,
 }));
 
