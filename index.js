@@ -3,14 +3,14 @@ const app = express()
 const cors = require('cors')
 const PORT = process.env.PORT || 5000
 const { corsOrigin } = require('./CorsOrigins')
-let originUrl = corsOrigin.url.API_URL
+let { originUrl } = corsOrigin.url.API_URL
 
-
+console.log(originUrl)
 //middleware
 app.use(express.json())
 app.use(express.urlencoded({ limit: '50mb', extended: true }))
 app.use(cors({
-    origin: {originUrl},
+    origin: originUrl,
     credentials: true,
 }));
 
