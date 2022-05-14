@@ -87,6 +87,8 @@ const checkEmail = async (req, res) => {
         const isUsernameUnique = await pool.query(
             "SELECT exists (SELECT 1 FROM users WHERE user_email = $1 LIMIT 1)",[email]
         )
+        const headers = res.getHeaders()
+        console.log(headers)
         res.json(isUsernameUnique.rows[0].exists)
     } catch (err) {
         console.error(err.message)
