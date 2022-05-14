@@ -10,9 +10,9 @@ console.log(originUrl)
 app.use(express.json())
 app.use(express.urlencoded({ limit: '50mb', extended: true }))
 app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "https://master--radiant-axolotl-de1247.netlify.app")
-    res.header("Access-Control-Allow-Headers", "Content-Type, Origin, Content-Length, Authorization, Accept, X-Requested-With")
-    res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS")
+    res.setHeader("Access-Control-Allow-Origin", "https://master--radiant-axolotl-de1247.netlify.app")
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Origin, Content-Length, Authorization, Accept, X-Requested-With")
+    res.setHeader("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS")
     next()
 });
 
