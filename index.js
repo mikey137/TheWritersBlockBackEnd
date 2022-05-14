@@ -14,8 +14,6 @@ app.use(cors({
     credentials: true,
 }));
 
-app.options('*', cors())
-
 //Routes
 
 app.use("/auth", require("./routes/auth"))
