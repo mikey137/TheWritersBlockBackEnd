@@ -14,6 +14,7 @@ app.use(express.json()) //Allow access the body json data
 app.use(cors({
     origin: {originUrl},
     optionsSuccessStatus: 200,
+    methods: "GET, POST, PUT, DELETE, OPTIONS",
     allowedHeaders: "Origin, Content-Type, X-Auth-Token"
 }))
 
