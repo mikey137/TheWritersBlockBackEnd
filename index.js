@@ -1,9 +1,12 @@
 const express = require("express")
-const app = express()
 const cors = require('cors')
-const PORT = process.env.PORT || 5000
+const dotevn = require('dotenv')
 const { corsOrigin } = require('./CorsOrigins')
 let  originUrl  = corsOrigin.url.API_URL
+
+dotevn.config();
+
+const app = express()
 
 app.use(express.json()) //Allow access the body json data
 
@@ -30,6 +33,7 @@ app.use("/users", require("./routes/users"))
 
 app.use("/followers", require("./routes/followers"))
 
+const PORT = process.env.PORT || 5000
 app.listen(PORT, () => {
     console.log(`server is running on port ${PORT}`)
 })
