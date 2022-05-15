@@ -5,6 +5,8 @@ const PORT = process.env.PORT || 5000
 const { corsOrigin } = require('./CorsOrigins')
 let  originUrl  = corsOrigin.url.API_URL
 
+app.use(express.json()) //Allow access the body json data
+
 //middleware
 app.use(cors({
     origin: { originUrl }
@@ -18,6 +20,7 @@ app.use(cors({
 // });
 
 //Routes
+
 
 app.use("/auth", require("./routes/auth"))
 

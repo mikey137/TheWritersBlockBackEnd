@@ -81,6 +81,7 @@ const checkUsername = async (req, res) => {
 }
 
 const checkEmail = async (req, res) => {
+    console.log('req', req.body)
     try {
         const email = req.body.email
 
