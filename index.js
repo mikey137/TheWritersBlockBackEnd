@@ -6,8 +6,6 @@ const { corsOrigin } = require('./CorsOrigins')
 let  originUrl  = corsOrigin.url.API_URL
 
 //middleware
-app.use(express.json())
-app.use(express.urlencoded({ limit: '50mb', extended: true }))
 app.use(cors({
     origin: { originUrl }
 }))
@@ -21,7 +19,7 @@ app.use(cors({
 
 //Routes
 
-app.use("/auth", require("./routes/auth"))
+app.use("/auth", cors(), require("./routes/auth"))
 
 app.use("/dashboard", require("./routes/dashboard"))
 
