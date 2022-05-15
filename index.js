@@ -13,7 +13,8 @@ app.use(express.json()) //Allow access the body json data
 //middleware
 app.use(cors({
     origin: {originUrl},
-    optionsSuccessStatus: 200
+    optionsSuccessStatus: 200,
+    allowedHeaders: "Origin"
 }))
 
 // app.use(function(req, res, next) {
