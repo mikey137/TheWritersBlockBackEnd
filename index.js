@@ -17,6 +17,8 @@ app.use(cors({
     allowedHeaders: "Origin"
 }))
 
+app.options('*', cors())
+
 // app.use(function(req, res, next) {
 //     res.setHeader("Access-Control-Allow-Origin", "https://master--radiant-axolotl-de1247.netlify.app")
 //     res.setHeader("Access-Control-Allow-Headers", "Content-Type, Origin, Content-Length, Authorization, Accept, X-Requested-With")
