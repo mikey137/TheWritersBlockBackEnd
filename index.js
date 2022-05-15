@@ -5,16 +5,20 @@ const PORT = process.env.PORT || 5000
 const { corsOrigin } = require('./CorsOrigins')
 let  originUrl  = corsOrigin.url.API_URL
 
-console.log(originUrl)
 //middleware
 app.use(express.json())
 app.use(express.urlencoded({ limit: '50mb', extended: true }))
-app.use(function(req, res, next) {
-    res.setHeader("Access-Control-Allow-Origin", "https://master--radiant-axolotl-de1247.netlify.app")
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Origin, Content-Length, Authorization, Accept, X-Requested-With")
-    res.setHeader("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS")
-    next()
-});
+app.use(cors({
+    origin: { originUrl },
+    credentials: true,
+}))
+
+// app.use(function(req, res, next) {
+//     res.setHeader("Access-Control-Allow-Origin", "https://master--radiant-axolotl-de1247.netlify.app")
+//     res.setHeader("Access-Control-Allow-Headers", "Content-Type, Origin, Content-Length, Authorization, Accept, X-Requested-With")
+//     res.setHeader("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS")
+//     next()
+// });
 
 //Routes
 
