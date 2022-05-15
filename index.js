@@ -19,7 +19,9 @@ app.use(cors({
 
 //Routes
 
-app.use("/auth", cors(), require("./routes/auth"))
+app.use("/auth", cors({
+    origin: { originUrl }
+}), require("./routes/auth"))
 
 app.use("/dashboard", require("./routes/dashboard"))
 
