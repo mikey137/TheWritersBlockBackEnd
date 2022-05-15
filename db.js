@@ -11,6 +11,7 @@ const DB_HOST = process.env.NODE_ENV === 'development' ? process.env.DB_LOCAL_HO
 const DB_DBNAME = process.env.NODE_ENV === 'development' ? process.env.DB_LOCAL_DBNAME : process.env.DB_PROD_DBNAME
 
 const pool = new Pool({
+    ssl: { rejectUnauthorized: false},
     user: DB_USER,
     password: DB_PASSWORD,
     host: DB_HOST,
