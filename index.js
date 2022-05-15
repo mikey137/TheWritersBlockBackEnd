@@ -8,9 +8,7 @@ let  originUrl  = corsOrigin.url.API_URL
 app.use(express.json()) //Allow access the body json data
 
 //middleware
-app.use(cors({
-    origin: { originUrl }
-}))
+app.use(cors())
 
 // app.use(function(req, res, next) {
 //     res.setHeader("Access-Control-Allow-Origin", "https://master--radiant-axolotl-de1247.netlify.app")
