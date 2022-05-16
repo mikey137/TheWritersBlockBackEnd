@@ -15,7 +15,7 @@ app.use(cors({
     origin: {originUrl},
     optionsSuccessStatus: 200,
     methods: "GET, POST, PUT, DELETE, OPTIONS",
-    allowedHeaders: "Origin, Content-Type, X-Auth-Token, Authorization"
+    allowedHeaders: "Origin, Content-Type, X-Auth-Token, token"
 }))
 
 app.options('*', cors())
