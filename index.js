@@ -8,7 +8,7 @@ dotevn.config();
 
 const app = express()
 
-app.use(express.json()) //Allow access the body json data
+app.use(express.json()) 
 
 //middleware
 app.use(cors({
@@ -19,13 +19,6 @@ app.use(cors({
 }))
 
 app.options('*', cors())
-
-// app.use(function(req, res, next) {
-//     res.setHeader("Access-Control-Allow-Origin", "https://master--radiant-axolotl-de1247.netlify.app")
-//     res.setHeader("Access-Control-Allow-Headers", "Content-Type, Origin, Content-Length, Authorization, Accept, X-Requested-With")
-//     res.setHeader("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS")
-//     next()
-// });
 
 //Routes
 
@@ -44,3 +37,6 @@ const PORT = process.env.PORT || 5000
 app.listen(PORT, () => {
     console.log(`server is running on port ${PORT}`)
 })
+
+// connectionString: DATABASE_URL,
+// ssl: { rejectUnauthorized: false},
