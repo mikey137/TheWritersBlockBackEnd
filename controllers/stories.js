@@ -104,9 +104,6 @@ const getMostViewed = async (req, res) => {
         const mostViewedStories = await pool.query(
             "SELECT * FROM story_info ORDER BY views DESC LIMIT 5"
         )
-
-        console.log(mostViewedStories)
-
         res.json(mostViewedStories.rows)
     } catch (err) {
         console.error(err)
