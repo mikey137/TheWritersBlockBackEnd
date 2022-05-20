@@ -17,11 +17,12 @@ const createStory = async (req, res) => {
 
 const deleteStory = async (req, res) => {
     try {
-       const { story_id } = req.body 
-
+       const{ id }= req.body
        const deleteStory = await pool.query(
-           "DELETE FROM story_info WHERE story_id = $1", [story_id]
+           "DELETE FROM story_info WHERE story_id = $1", [id]
        )
+
+       res.send('story deleted')
     } catch (err) {
         console.error(err)
     }
