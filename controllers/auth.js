@@ -13,7 +13,7 @@ const register = async (req, res, next) => {
         const salt = await bcrypt.genSalt(10)
         const bcryptPassword = await bcrypt.hash(password, salt)
 
-        const newUser = await pool.query("INSERT INTO users(user_name, user_email, user_password) VALUES ($1, $2, $3) RETURNING *", [name, email, bcryptPassword])
+        const newUser = await pool.query("INSERT INTO users(user_name, user_email, user_password, user_photo) VALUES ($1, $2, $3, 'https://img.favpng.com/25/13/19/samsung-galaxy-a8-a8-user-login-telephone-avatar-png-favpng-dqKEPfX7hPbc6SMVUCteANKwj.jpg') RETURNING *", [name, email, bcryptPassword])
 
         const token = jwtGenerator(newUser.rows[0].user_id)
 
@@ -81,7 +81,6 @@ const checkUsername = async (req, res) => {
 }
 
 const checkEmail = async (req, res) => {
-    console.log('req', req.body)
     try {
         const email = req.body.email
 

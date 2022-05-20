@@ -61,10 +61,10 @@ const viewStory = async (req,res) => {
 
 const editStory = async (req, res) => {
     try {
-        const { story_id, text, title, isPublic} = req.body
+        const { storyId, storyText, storyTitle, photoUrl} = req.body
 
         const newStory = await pool.query(
-            "UPDATE story_info SET story_text = $1, story_title = $2, public = $3 WHERE story_id = $4", [text, title, isPublic, story_id]
+            "UPDATE story_info SET story_text = $1, story_title = $2, photo_url = $3 WHERE story_id = $4", [storyText, storyTitle, photoUrl, storyId]
         )
 
         res.send("story updated")
@@ -82,6 +82,7 @@ const getStory = async (req, res) => {
         )
 
         response = {
+            story_id: story.rows[0].story_id,
             user_id: story.rows[0].user_id,
             story_text: story.rows[0].story_text,
             story_title: story.rows[0].story_title,
