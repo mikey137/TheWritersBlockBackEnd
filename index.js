@@ -10,8 +10,6 @@ const app = express()
 
 app.use(express.json()) 
 app.use(express.urlencoded({extended: true}));
-
-//middleware
 app.use(cors({
     origin: {originUrl},
     optionsSuccessStatus: 200,
@@ -22,8 +20,6 @@ app.use(cors({
 app.options('*', cors())
 
 //Routes
-
-
 app.use("/auth", require("./routes/auth"))
 
 app.use("/dashboard", require("./routes/dashboard"))
@@ -38,6 +34,3 @@ const PORT = process.env.PORT || 5000
 app.listen(PORT, () => {
     console.log(`server is running on port ${PORT}`)
 })
-
-// connectionString: DATABASE_URL,
-// ssl: { rejectUnauthorized: false},
